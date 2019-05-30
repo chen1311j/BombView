@@ -30,6 +30,7 @@ public class ExplosionField extends View {
 
     public ExplosionField(Context context, ParticleFactory factory) {
         super(context);
+        attch2Activity((Activity) context);
         explosionAnimators = new ArrayList<>();
         explosionAnimatorHashMap = new HashMap<>();
         particleFactory = factory;
@@ -50,7 +51,7 @@ public class ExplosionField extends View {
     public void attch2Activity(Activity activity){
         ViewGroup root = activity.findViewById(Window.ID_ANDROID_CONTENT);
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        activity.addContentView(this, layoutParams);
+        root.addView(this, layoutParams);
     }
 
     /**
