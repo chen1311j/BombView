@@ -149,7 +149,7 @@ public class ExplosionField extends View {
                 view.animate().setDuration(150).scaleX(0f).scaleY(0f).alpha(0f).start();
             }
         });
+        explosionAnimator.start();
     }
-
 
 }
