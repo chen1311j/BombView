@@ -14,13 +14,15 @@ public class FallingParticleFactory extends ParticleFactory {
         int wCount = w/PART_WH;
         int hCount = h/PART_WH;
 
-        int rawCount = bitmap.getWidth()/(wCount > 0 ? wCount:1);
-        int columnCount = bitmap.getHeight()/(hCount > 0 ? hCount:1);
+        int partWCount = wCount > 0 ? wCount:1;
+        int partHCount = hCount > 0 ? hCount:1;
+        int rawCount = bitmap.getWidth()/partWCount;
+        int columnCount = bitmap.getHeight()/partHCount;
 
-        Particle[][] particles = new Particle[rawCount][columnCount];
-        for(int raw = 0; raw < rawCount; raw++){
-            for(int column = 0; column < columnCount; column++){
-                int color = bitmap.getPixel(rawCount*rawCount, column*columnCount);
+        Particle[][] particles = new Particle[partHCount][partWCount];
+        for(int raw = 0; raw < partHCount; raw++){
+            for(int column = 0; column < partWCount; column++){
+                int color = bitmap.getPixel(column*rawCount, raw*columnCount);
                 int x = rect.left+raw*PART_WH;
                 int y = rect.top+column*PART_WH;
                 particles[raw][column] = new FallingParticle(x, y, color, rect);
