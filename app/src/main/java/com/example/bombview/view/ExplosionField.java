@@ -118,7 +118,6 @@ public class ExplosionField extends View {
                 view.setTranslationX(0f);
                 view.setTranslationY(0f);
                 view.setClickable(true);
-                view.setOnClickListener(getOnClickListener());
             }
 
             @Override
