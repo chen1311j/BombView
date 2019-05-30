@@ -19,6 +19,7 @@ public abstract class Particle {
     protected abstract void calculate(float factor);
 
     public void advance(Canvas canvas, Paint paint, float factor){
-
+        calculate(factor);
+        draw(canvas, paint);
     }
 }
