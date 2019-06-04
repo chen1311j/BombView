@@ -37,6 +37,7 @@ public class ExplosionAnimator extends ValueAnimator {
                 particle.advance(canvas, pain, (Float) getAnimatedValue());
             }
         }
+        container.invalidate();
     }
 
     @Override
