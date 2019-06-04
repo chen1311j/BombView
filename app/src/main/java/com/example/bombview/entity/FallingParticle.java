@@ -32,7 +32,7 @@ public class FallingParticle extends Particle {
     protected void calculate(float factor) {
         cx+= factor*(mRandom.nextInt(rect.width()))*(mRandom.nextFloat()-0.5);
         cy+= factor*(mRandom.nextInt(rect.height()))*(mRandom.nextFloat()-0.5);
-        radius = factor*mRandom.nextInt(2);
+        radius -= factor*mRandom.nextInt(2);
         alphas = (1-factor)*(mRandom.nextFloat()+1);
     }
 }
